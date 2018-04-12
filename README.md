@@ -11,5 +11,5 @@ TecentExmailAPI 是一个基于腾讯企业邮箱开发的Python SDK，采用Apa
 安装
 
 ```bash
-pip install tecent_exmail
+pip install tencent_exmail
 ```

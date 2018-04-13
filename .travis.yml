@@ -11,6 +11,7 @@ python:
 - '3.5'
 before_install:
   - pip install -r requirements.txt
+  - chmod +x ci/run_tests.sh
 script:
   - python setup.py install
   - make test

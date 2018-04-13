@@ -5,7 +5,7 @@ Create on: 2018-4-12
 @File    : UserManagement.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 API_URL = "https://api.exmail.qq.com/cgi-bin/user/{}?access_token={}"
 
@@ -128,6 +128,7 @@ class User:
                 "extid": self._extid,
                 "gender": self._gender,
                 "slaves": self._slaves,
+                "enable": self._enable,
                 "password": self._password,
                 "cpwd_login": self._cpwd_login
             }
@@ -171,7 +172,7 @@ class User:
         """
         if "simplelist" in self._api_url:
             self._api_url = self._api_url + "&department_id=" + self._department_id\
-                            + "&fetch_child=" + self._fetch_child
+                            + "&fetch_child=" + str(self._fetch_child)
             res = self._request.request(method="GET",
                                         url=self._api_url)
             return res.json()
@@ -186,7 +187,7 @@ class User:
         if "list" in self._api_url:
             self._api_url = self._api_url + \
                             "&department_id=" + self._department_id + \
-                            "&fetch_child=" + self._fetch_child
+                            "&fetch_child=" + str(self._fetch_child)
             res = self._request.request(method="GET",
                                         url=self._api_url)
             return res.json()

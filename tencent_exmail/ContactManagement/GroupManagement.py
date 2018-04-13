@@ -5,7 +5,7 @@ Create on: 2018-4-13
 @File    : GroupManagement.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 API_URL = "https://api.exmail.qq.com/cgi-bin/group/{}?access_token={}"
 

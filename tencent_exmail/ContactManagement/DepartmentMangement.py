@@ -5,7 +5,7 @@ Create on: 2018-4-12
 @File    : DepartmentManagement.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 API_URL = "https://api.exmail.qq.com/cgi-bin/department/{}?access_token={}"
 
@@ -89,7 +89,7 @@ class Department:
         :return:
         """
         if "delete" in self._api_url:
-            self._api_url = self._api_url + "&id=" + self._depart_id
+            self._api_url = self._api_url + "&id=" + str(self._depart_id)
             res = self._request.request(method="GET", url=self._api_url)
             return res.json()
         else:

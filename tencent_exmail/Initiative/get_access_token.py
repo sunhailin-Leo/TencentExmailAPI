@@ -5,7 +5,7 @@ Create on: 2018-4-12
 @File    : get_access_token.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 # 接口地址
 API_URL = "https://api.exmail.qq.com/cgi-bin/gettoken?corpid={}&corpsecret={}"

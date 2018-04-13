@@ -5,7 +5,7 @@ Create on: 2018-4-13
 @File    : FunctionAttribute.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 API_URL = "https://api.exmail.qq.com/cgi-bin/useroption/{}?access_token={}"
 
@@ -15,8 +15,8 @@ class Function:
                  access_token: str,
                  operation: str,
                  userid: str,
-                 function_type: list,
-                 option: list):
+                 function_type='',
+                 option=''):
         """
         邮件功能设置
         :param access_token: 调用接口凭证 (必须)
@@ -48,6 +48,12 @@ class Function:
         self._function_type = function_type
         self._option = option
 
+        if self._function_type != "" and not isinstance(self._function_type, list):
+            raise TypeError("Function_type type is err!")
+
+        if self._option != "" and not isinstance(self._option, list):
+            raise TypeError("Option type is err!")
+
         # URL
         operation_list = ["get", "update"]
         if operation in operation_list:
@@ -64,6 +70,23 @@ class Function:
             data = {
                 "userid": self._userid,
                 "type": self._function_type
+            }
+            res = self._request.request(method="POST",
+                                        url=self._api_url,
+                                        json=data)
+            return res.json()
+        else:
+            return {'errmsg': 'Invalid input', 'errcode': -1}
+
+    def update_function_attribute(self):
+        """
+        更改功能属性
+        :return:
+        """
+        if "update" in self._api_url:
+            data = {
+                "userid": self._userid,
+                "option": self._option
             }
             res = self._request.request(method="POST",
                                         url=self._api_url,

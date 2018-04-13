@@ -5,7 +5,7 @@ Create on: 2018-4-13
 @File    : GetMailUnread.py
 """
 
-from BaseRequest.BaseHttpRequest import BaseHttpRequest
+from tencent_exmail.BaseRequest.BaseHttpRequest import BaseHttpRequest
 
 # 主动模式
 API_URL = "https://api.exmail.qq.com/cgi-bin/mail/newcount?access_token={}&userid={}"

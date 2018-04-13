@@ -2,8 +2,8 @@
 from setuptools import setup, find_packages
 
 
-__title__ = 'tencent_exmail'
-__version__ = '0.1.0'
+__title__ = 'TencentExmail'
+__version__ = '0.1.1'
 __author__ = "sunhailin-Leo"
 __description__ = 'Python Tencent Exmail API'
 __url__ = 'https://github.com/sunhailin-Leo/TencentExmailAPI'
@@ -20,6 +20,7 @@ setup(
     version=__version__,
     description=__description__,
     url=__url__,
+    packages=find_packages(),
     author=__author__,
     author_email=__author_email__,
     license=__license__,

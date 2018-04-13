@@ -1,4 +1,4 @@
 all: test
 
 test:
-    ci/run_tests.sh
+	ci/run_tests.sh

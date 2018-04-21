@@ -8,12 +8,17 @@
 
 TecentExmailAPI 是一个基于腾讯企业邮箱开发的Python SDK，采用Apache License 2.0协议发布。
 
+---
 
-文档: 暂无(稍后补充)
+<h3 id="Contact">联系方式(Contact)</h3>
+
+* E-Mail: 379978424@qq.com
+
+欢迎随时提Issue帮助改进这个项目.
 
 ---
 
-安装
+<h3 id="Install">安装</h3>
 
 ```bash
 pip install tencent_exmail

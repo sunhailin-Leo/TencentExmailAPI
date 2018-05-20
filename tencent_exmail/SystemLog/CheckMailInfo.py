@@ -18,6 +18,7 @@ class ExMailInfo:
                  end_date):
         """
         查询邮件概况 https://exmail.qq.com/qy_mng_logic/doc#10027%20
+        查询开始和结束时间有限制(3个月)
         :param access_token: 调用接口凭证(必须)
         :param domain: 域名(必须)
         :param begin_date: 开始日期。格式为2016-10-01(必须)
